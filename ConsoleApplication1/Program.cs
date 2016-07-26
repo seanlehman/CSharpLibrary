@@ -20,10 +20,37 @@ namespace Proj1Strings
             string s3 = s + s2;
             Console.WriteLine($"Concatenation:   {s3}");
             Console.WriteLine();
-
-            
-
+            GetSubString.RetInfo();
             Console.ReadLine();
+
+        }
+    }
+
+    //Substring
+
+    public class GetSubString
+    {
+        public static void RetInfo()
+        {
+            string[] records = { "Name: Jake Blues", "Address: 1060 West Addison, Chicago, IL", "Occupation: Musician", "Age: 35" };
+
+            int endOfRecord = 0;
+
+            Console.WriteLine("The total array information is ");
+            foreach (string s in records)
+            {
+                Console.WriteLine(s);
+            }
+
+            Console.WriteLine("\nThe array information without the tags is");
+            foreach (string s in records)
+            {
+                endOfRecord = s.IndexOf(": ");
+                Console.WriteLine("   {0}", s.Substring(endOfRecord + 2));
+
+            }
         }
     }
 }
+
+
