@@ -21,6 +21,7 @@ namespace Proj1Strings
             Console.WriteLine($"Concatenation:   {s3}");
             Console.WriteLine();
             GetSubString.RetInfo();
+            Console.WriteLine(GetSubString.RevStr("taco cat"));
             Console.ReadLine();
 
         }
@@ -49,6 +50,18 @@ namespace Proj1Strings
                 Console.WriteLine("   {0}", s.Substring(endOfRecord + 2));
 
             }
+        }
+
+        // Reverse a string
+
+        public static char [] RevStr(string x)
+        {
+
+            char [] charArray = new char [x.Length];
+            int len = x.Length - 1;
+            for (int i = 0; i <= len; i++)
+                charArray[i] = x[len - i];
+            return charArray;
         }
     }
 }
